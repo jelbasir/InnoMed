@@ -5504,3 +5504,639 @@ Processing by PatientsController#new as HTML
 Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-06-15 22:44:35 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-06-15 22:44:57 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-06-15 22:51:32 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAppointments (20190610191525)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1503.1ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "appointment_date" datetime, "patient_id" integer, "doctor_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_c63da04ab4"
+FOREIGN KEY ("patient_id")
+  REFERENCES "patients" ("id")
+, CONSTRAINT "fk_rails_8db8e1e8a5"
+FOREIGN KEY ("doctor_id")
+  REFERENCES "doctors" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_patient_id" ON "appointments" ("patient_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_doctor_id" ON "appointments" ("doctor_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190610191525"]]
+  [1m[35m (307.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_patients_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_patients_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-06-15 22:53:14 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1000.2ms)
+Completed 500 Internal Server Error in 1056ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    10:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    11: </div>
+    12: 
+    13: <%= link_to image_tag("rails.png", alt: "Rails logo"),
+    14:             'http://rubyonrails.org/' %>
+  
+app/views/static_pages/home.html.erb:13:in `_app_views_static_pages_home_html_erb__123997590_61822440'
+Started GET "/" for ::1 at 2019-06-15 23:00:13 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (284.4ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     sample application.
+     8:   </h2>
+     9: 
+    10:   <%= image_tag("rails.png") %>
+    11: 
+    12:   
+    13:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
+app/views/static_pages/home.html.erb:10:in `_app_views_static_pages_home_html_erb__123997590_106308120'
+Started GET "/" for ::1 at 2019-06-15 23:01:35 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (681.3ms)
+Completed 500 Internal Server Error in 726ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     sample application.
+     8:   </h2>
+     9: 
+    10:   <%= image_tag("rails.png") %>
+    11: 
+    12:   
+    13:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
+app/views/static_pages/home.html.erb:10:in `_app_views_static_pages_home_html_erb__1023759805_62168560'
+Started GET "/" for ::1 at 2019-06-15 23:18:01 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (695.2ms)
+Completed 500 Internal Server Error in 741ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     sample application.
+     8:   </h2>
+     9: 
+    10:   <%= image_tag('rails.png') %>
+    11: 
+    12:   
+    13:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
+app/views/static_pages/home.html.erb:10:in `_app_views_static_pages_home_html_erb__709851088_65371100'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_doctor_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_appointments_on_patient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_patients_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_patients_on_email' AND type='index'
+[0m
+Started GET "/" for ::1 at 2019-06-15 23:23:43 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (686.6ms)
+Completed 500 Internal Server Error in 730ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+     7:     sample application.
+     8:   </h2>
+     9: 
+    10:   <%= image_tag('rails.png') %>
+    11: 
+    12:   
+    13:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  
+app/views/static_pages/home.html.erb:10:in `_app_views_static_pages_home_html_erb__903456970_67656860'
+Started GET "/" for ::1 at 2019-06-15 23:24:28 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 6642ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    3:   <head>
+    4:     <title><%= full_title(yield(:title)) %></title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all',
+    7:                                               'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <%= render 'layouts/shim' %>
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__692794798_108697960'
+Started GET "/" for ::1 at 2019-06-15 23:29:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (690.9ms)
+Completed 500 Internal Server Error in 737ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (TypeError: Object doesn't support this property or method):
+    10:   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+    11: </div>
+    12: 
+    13: <%= link_to image_tag("rails.png", alt: "Rails logo") %>
+  
+app/views/static_pages/home.html.erb:13:in `_app_views_static_pages_home_html_erb__369798946_55856780'
+Started POST "/signup" for ::1 at 2019-06-16 15:45:03 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+1XdeXLj+kLjGYVb2j15EqiVyPx1cOq4cCE1Ph67POrvHjv75OxSYYvwx7yW1iMqCaChhOnpzc5yR78YBSg+Gg==", "patient"=>{"stripe_card_token"=>"", "first_name"=>"fgfdgdfg", "last_name"=>"dfgdfgd", "gender"=>"Female", "phoneNo"=>"4534534543", "email"=>"abc@12323.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "insurance"=>"fdgfdgdfg", "address"=>"fgdfgdfg", "dob(1i)"=>"2019", "dob(2i)"=>"6", "dob(3i)"=>"16"}, "commit"=>"CreateAccount"}
+Unpermitted parameters: :stripe_card_token, :last_name, :phoneNo, :insurance, :address, :dob(1i), :dob(2i), :dob(3i)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "abc@12323.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/patients_controller.rb:46:in `format'
+app/controllers/patients_controller.rb:46:in `create'
+Started GET "/" for ::1 at 2019-06-16 15:45:18 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1390.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1790ms (Views: 1769.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-06-16 15:45:37 +0100
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered patients/new.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 318ms (Views: 166.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for ::1 at 2019-06-16 15:46:05 +0100
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n5H0gCiGjjZVGfTo9liAAtmmUQ2AvdcOaO7ftxvBgIWL2hICvokmFT3wtg+6s9o6eJM4dRwk8HhqiFWRAFKCdQ==", "patient"=>{"first_name"=>"snf", "last_name"=>"syed ", "gender"=>"Female", "phoneNo"=>"3131", "email"=>"abc@123.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "insurance"=>"Irish Health Insurance", "address"=>"qwertyui", "dob(1i)"=>"2019", "dob(2i)"=>"6", "dob(3i)"=>"16"}, "commit"=>"Create account"}
+Unpermitted parameters: :last_name, :phoneNo, :insurance, :address, :dob(1i), :dob(2i), :dob(3i)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "abc@123.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/patients_controller.rb:46:in `format'
+app/controllers/patients_controller.rb:46:in `create'
+Started POST "/signup" for ::1 at 2019-06-16 15:48:20 +0100
+Processing by PatientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/UiivnjpnT4Zs4IcpDj3109abxUmsj8xuGK7ssWSaeTZxD+pBraeprrWAR3ENM1jKRo2Lfk9PkIDbQw4GaQNlA==", "patient"=>{"first_name"=>"snf", "last_name"=>"syed ", "gender"=>"Female", "phoneNo"=>"3131", "email"=>"qwertyu@123.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "insurance"=>"Irish Health Insurance", "address"=>"qwertyui", "dob(1i)"=>"2019", "dob(2i)"=>"6", "dob(3i)"=>"16"}, "commit"=>"Create account"}
+Unpermitted parameters: :last_name, :phoneNo, :insurance, :address, :dob(1i), :dob(2i), :dob(3i)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "qwertyu@123.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1602.6ms)[0m  [1m[32mINSERT INTO "patients" ("first_name", "email", "gender", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "snf"], ["email", "qwertyu@123.com"], ["gender", "Female"], ["created_at", "2019-06-16 14:48:20.418174"], ["updated_at", "2019-06-16 14:48:20.418174"], ["password_digest", "$2a$10$zV/.bve7srEhGcyF2YhucOXPJY5LqLqkOQWddWMVJf2A1JRKeqAIC"]]
+  [1m[35m (231.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/patients/4
+Completed 302 Found in 1898ms (ActiveRecord: 1833.9ms)
+
+
+Started GET "/patients/4" for ::1 at 2019-06-16 15:48:22 +0100
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 181ms (Views: 136.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/4" for ::1 at 2019-06-16 15:48:55 +0100
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 148ms (Views: 134.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:49:01 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 142ms (Views: 131.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-06-16 15:49:03 +0100
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  Rendered doctors/index.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 163ms (Views: 138.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/doctors" for ::1 at 2019-06-16 15:49:06 +0100
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  Rendered doctors/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 144ms (Views: 133.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/doctors" for ::1 at 2019-06-16 15:49:08 +0100
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  Rendered doctors/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 153ms (Views: 142.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/4" for ::1 at 2019-06-16 15:49:11 +0100
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 146ms (Views: 132.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:49:23 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 149ms (Views: 136.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:49:32 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (3.5ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 144ms (Views: 133.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:49:34 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 140ms (Views: 129.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/patients/4" for ::1 at 2019-06-16 15:49:35 +0100
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 152ms (Views: 137.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/4/edit" for ::1 at 2019-06-16 15:49:46 +0100
+Processing by PatientsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/edit.html.erb within layouts/application
+  Rendered patients/_form.html.erb (7.4ms)
+  Rendered patients/edit.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 186ms (Views: 166.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/patients/4" for ::1 at 2019-06-16 15:49:56 +0100
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering patients/show.html.erb within layouts/application
+  Rendered patients/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 145ms (Views: 130.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/patients" for ::1 at 2019-06-16 15:49:58 +0100
+Processing by PatientsController#index as HTML
+  Rendering patients/index.html.erb within layouts/application
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  Rendered patients/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 159ms (Views: 139.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/patients/new" for ::1 at 2019-06-16 15:50:03 +0100
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered patients/new.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 162ms (Views: 151.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:50:26 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 150ms (Views: 137.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/doctors" for ::1 at 2019-06-16 15:50:29 +0100
+Processing by DoctorsController#index as HTML
+  Rendering doctors/index.html.erb within layouts/application
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  Rendered doctors/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 154ms (Views: 141.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:50:31 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 147ms (Views: 134.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-16 15:57:42 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (526.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (22.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 806ms (Views: 791.6ms | ActiveRecord: 0.9ms)
+
+
