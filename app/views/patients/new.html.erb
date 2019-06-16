@@ -36,6 +36,29 @@
       <%=label_tag "patient_dob", "DOB"%>
       <%=date_select "patient", "dob", { start_year: 100.years.ago.year, end_year: Date.today.year, default: Date.today},{:class => 'form-control'}%>
 
+      
+      <div class="field">
+      <%= label_tag :card_number, "Credit Card Number" %>
+      <%= text_field_tag :card_number, nil, name: nil %>
+      </div>
+    
+      <div class="field">
+      <%= label_tag :card_code, "security Code on card(cvv)" %>
+      <%= text_field_tag :card_code, nil, name: nil %>
+      </div>
+    
+      <div class="field">
+      <%= label_tag :card_month, "Card Expiration" %>
+      <%= select_month nil, {add_month_numbers: true},{name: nil, id: "card_month"} %>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15},{name: nil, id: "card_year"} %>
+      </div>
+    
+      <div id="stripe_error">
+        <noscript>please enable java script </noscript>
+      </div>
+
+
+
       <%= f.submit "Create account", class: "btn btn-primary" %>
     <% end %>
   </div>
