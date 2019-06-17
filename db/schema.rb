@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190610191525) do
+ActiveRecord::Schema.define(version: 20190615153732) do
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "appointment_date"
+    t.date "appointmentdate"
+    t.time "appointmenttime"
     t.integer "patient_id"
     t.integer "doctor_id"
     t.datetime "created_at", null: false
@@ -52,6 +53,16 @@ ActiveRecord::Schema.define(version: 20190610191525) do
     t.string "password_digest"
     t.date "dob"
     t.index ["email"], name: "index_patients_on_email", unique: true
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.integer "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_schedules_on_doctor_id"
   end
 
 end

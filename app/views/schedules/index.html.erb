@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schedules</h1>
+
+<table class="sched table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Doctor</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.title %></td>
+        <td><%= schedule.start %></td>
+        <td><%= schedule.end %></td>
+        <td><%= schedule.doctor.full_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

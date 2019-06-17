@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start: 2019-06-15 11:46:57
+  end: 2019-06-15 11:46:57
+  doctor_id: 1
+
+two:
+  title: MyString
+  start: 2019-06-15 11:46:57
+  end: 2019-06-15 11:46:57
+  doctor_id: 1

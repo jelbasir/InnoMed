@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   resources :appointments
+  resources :schedules
   get 'password_resets/new'
 
   get 'password_resets/edit'
 
-  resources :doctors
+  resources :patients, :doctors do
+   resources :appointments, only: [:index,:new, :create, :destroy]
+  end
+  resources :doctors do
+   resources :schedules
+  end
+  
+  
   #get 'sessions/new'
 
   #get 'static_pages/home'
@@ -27,7 +35,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :patients
-  
+ 
   resources :password_resets,     only: [:new, :create, :edit, :update]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
