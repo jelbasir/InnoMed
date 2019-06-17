@@ -1,25 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<ul class="doctors">
+<table class="doctors">
+     <% if logged_in? %>
+       <%= link_to "Book Appointment",new_patient_appointment_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+     <% end %>
     <% @doctors.each do |doctor| %>
-      <li>
+      <tr>
         <td>
         <div class="image">
             <%= link_to (image_tag doctor.image_url, :style => "height:100px"), doctor %>
         </div>
         </td>
-        <br>
+        <td>
         <div class="name">
           <strong><%= doctor.first_name + " " + doctor.middle_name + " " + doctor.last_name %></strong>
         </div>
          <div class="speciality">
           <%= doctor.speciality%>
         </div>
+        </td>
+        <td>
          <div class="bio">
             <p><%= doctor.bio %></p>
         </div>
-          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-     </li>
+        </td>
+      <td>
+       <%= link_to "View Schedule", doctor_schedules_path(doctor.id), class: "btn btn-lg btn-primary" %>
+       <br>
+      </td>
+      </tr>
+  
     <% end %>
     
-</ul>
+</table>

@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :appointment_date %>
-    <%= form.datetime_select :appointment_date, id: :appointment_appointment_date %>
+    <%= form.label :appointmentdate %>
+    <%= form.date_select :appointmentdate, id: :appointment_appointmentdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appointmenttime %>
+    <%= form.time_select :appointmenttime, id: :appointment_appointmenttime %>
   </div>
 
   <div class="field">
