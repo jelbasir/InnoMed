@@ -1,16 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery -> 
   Stripe.setPublishiableKey($('meta[name="stripe-key"]').attr('content'))
-  patient.setupForm()
+  subscription.setupForm()
 
-patient = 
+subscription = 
   setupForm: ->
-    $('#new_patient').submit ->
+    $('#new_subscription').submit ->
       $('input[type=submit]').attr('disabled',true)
-      patient.processCard()
+      subscription.processCard()
       false
 
   processCard: ->
@@ -19,11 +16,11 @@ patient =
       cvc: $('#card_code').val()
       expMonth: $('#card_month').val()
       expyear: $('#card_year').val() 
-    Stripe.createToken(card,patient.handleStripeResponse)
+    Stripe.createToken(card,subscription.handleStripeResponse)
 
   handleStripeResponse: ->
     if status == 200
-      $('#patient_stripe_card_token').val(response.id)
+      $('#subscription_stripe_card_token').val(response.id)
       alert(response.id)
       $('#new_patient')[0].submit()
     else 
