@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190622101122) do
+ActiveRecord::Schema.define(version: 20190622194729) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointmentdate"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 20190622101122) do
     t.string "password_digest"
     t.date "dob"
     t.index ["email"], name: "index_patients_on_email", unique: true
+  end
+
+  create_table "remote_consultations", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "schedules", force: :cascade do |t|

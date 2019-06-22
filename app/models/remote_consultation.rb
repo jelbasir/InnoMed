@@ -1,0 +1,2 @@
+class RemoteConsultation < ApplicationRecord
+end

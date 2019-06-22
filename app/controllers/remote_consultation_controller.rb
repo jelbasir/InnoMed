@@ -1,0 +1,2 @@
+class RemoteConsultationController < ApplicationController
+end

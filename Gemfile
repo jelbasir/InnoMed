@@ -45,6 +45,8 @@ gem 'bulma-rails', '~> 0.7.5'
 #Simple Form
 gem 'simple_form', '~> 4.1'
 
+# enable the REPL and local/instance variable inspection
+gem 'binding_of_caller', '~> 0.8.0'
 
 
 
@@ -68,7 +70,7 @@ group :development do
   gem 'guard', '~> 2.15'
 
   # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+ gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 
 end
 

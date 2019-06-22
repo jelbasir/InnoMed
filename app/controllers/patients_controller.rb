@@ -12,8 +12,6 @@ class PatientsController < ApplicationController
   def show
        @patient  = Patient.find(params[:id])
        
-       @microposts = @patient.microposts.paginate(page: params[:page])
-
   end
 
   # GET /patients/new
