@@ -1,63 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @patient.photo %>
-</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @patient.first_name %>
-</p>
+<h1><%= @patient.full_name%></h1>
+    <h1><%= @patient.photo %></h1>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @patient.last_name %>
-</p>
+<h2 class="ui center aligned blue header">Patient Information</h2>
+<table class="ui definition table user-info selectable">
+<tr>
+    <td>First Name:</td>
+    <td><%= @patient.first_name %></td>
+</tr>
+<tr>
+    <td>Last Name:</td>
+    <td><%= @patient.last_name %></td>
+</tr>
+<tr>
+    <td>Age:</td>
+    <td><%= @patient.age %></td>
+</tr>
+<tr>
+    <td>Email:</td>
+    <td><%= @patient.email %></td>
+</tr>
+<tr>
+    <td>Gender:</td>
+    <td><%= @patient.gender %></td>
+</tr>
+<tr>
+    <td>Phone:</td>
+    <td><%= @patient.phoneNo %></td>
+</tr>
+<tr>
+    <td>Address:</td>
+    <td><%= @patient.address %></td>
+</tr>
+<tr>
+    <td>Insurance:</td>
+    <td><%= @patient.insurance %></td>
+</tr>
+</table>
 
-<p>
-  <strong>Age:</strong>
-  <%= @patient.age %>
-</p>
 
-<p>
-  <strong>Phoneno:</strong>
-  <%= @patient.phoneNo %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @patient.gender %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
-
-<p>
-  <strong>Insurance:</strong>
-  <%= @patient.insurance %>
-</p>
-
-<%= @patient.first_name %>, <%= @patient.email %>
-
-<% provide(:title,@patient.first_name ) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-  <%= gravatar_for @patient %>
-  <%= @patient.first_name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-
+    
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to "Create New Remote Consultation", new_remoteconsultation_path(current_patient.id)%>
+

@@ -23,11 +23,20 @@ class AppointmentsController < ApplicationController
     if @appointment.save
        #flash[:success] = "You have updated #{@appointment.appointmentdate.year} #{@appointment.appointmentdate.month} #{@appointment.appointmentdate.day}."
        @schedule = Schedule.create(:title => 'Booked' , :start => DateTime.new(@appointment.appointmentdate.year,@appointment.appointmentdate.month, @appointment.appointmentdate.day, @appointment.appointmenttime.hour,@appointment.appointmenttime.min,@appointment.appointmenttime.sec) , :end => DateTime.new(@appointment.appointmentdate.year,@appointment.appointmentdate.month, @appointment.appointmentdate.day, @appointment.appointmenttime.hour +  1,@appointment.appointmenttime.min,@appointment.appointmenttime.sec), :doctor_id => @appointment.doctor_id)
-       redirect_to patient_appointments_path
+       #redirect_to patient_appointments_payment_path
+
+
+       render :payment
     else
       render :new
     end
   end
+
+  def payment
+
+      redirect_to patient_appointments_path
+
+  end 
 
    private
     def set_appointment

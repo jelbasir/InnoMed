@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+  <% if logged_in? %>
+    <%= link_to "Book Appointment",new_patient_appointment_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+    <%= link_to "Create New Remote Consultation", new_remoteconsultation_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+  <% end %>
+
 <h1>Appointments</h1>
 
 <table class="appt table">
@@ -22,7 +27,11 @@
       </tr>
     <% end %>
   </tbody>
+
+
 </table>
+
+
 
 
 

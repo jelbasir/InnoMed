@@ -5,6 +5,19 @@
 
 $gray-medium-light: #eaeaea;
 
+.myNavbar   {
+    background-color: #39d;
+ }
+
+.myNavbar li a { 
+color: black; 
+} 
+
+.myNavbar li a:hover, focus, active { 
+color: #39d; 
+background-color: 39d; 
+}
+
 /* universal */
 
 body {
@@ -99,6 +112,7 @@ p {
 
 #logo {
   float: left;
+  margin-top: 10px;
   margin-right: 10px;
   font-size: 1.7em;
   color: white;

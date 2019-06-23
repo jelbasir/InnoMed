@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190615153732) do
+ActiveRecord::Schema.define(version: 20190623173451) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointmentdate"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20190615153732) do
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
+  end
+
+  create_table "consultations", force: :cascade do |t|
+    t.string "name"
+    t.text "consultation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "remoteconsultation_id"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -38,6 +46,25 @@ ActiveRecord::Schema.define(version: 20190615153732) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "microposts", force: :cascade do |t|
+    t.text "content"
+    t.integer "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id", "created_at"], name: "index_microposts_on_patient_id_and_created_at"
+    t.index ["patient_id"], name: "index_microposts_on_patient_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "message"
+    t.integer "patient_id"
+    t.integer "doctor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_notes_on_doctor_id"
+    t.index ["patient_id"], name: "index_notes_on_patient_id"
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "photo"
     t.string "first_name"
@@ -53,6 +80,13 @@ ActiveRecord::Schema.define(version: 20190615153732) do
     t.string "password_digest"
     t.date "dob"
     t.index ["email"], name: "index_patients_on_email", unique: true
+  end
+
+  create_table "remoteconsultations", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "schedules", force: :cascade do |t|

@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>Appointmentdate:</strong>
   <%= @appointment.appointmentdate %>
@@ -19,6 +20,8 @@
   <strong>Doctor:</strong>
   <%= @appointment.doctor %>
 </p>
+               
+
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>

@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   resources :appointments
   resources :schedules
+  resources :remoteconsultations
+
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
 
   resources :patients, :doctors do
-   resources :appointments, only: [:index,:new, :create, :destroy]
+   resources :appointments, only: [:index,:new, :create, :destroy, :payment]
   end
   resources :doctors do
    resources :schedules

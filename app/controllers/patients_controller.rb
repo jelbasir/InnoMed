@@ -11,6 +11,7 @@ class PatientsController < ApplicationController
   # GET /patients/1.json
   def show
        @patient  = Patient.find(params[:id])
+
   end
 
   # GET /patients/new
@@ -55,8 +56,8 @@ class PatientsController < ApplicationController
   def update
     respond_to do |format|
       if @patient.update(patient_params)
-        #format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
-        #format.json { render :show, status: :ok, location: @patient }
+        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        format.json { render :show, status: :ok, location: @patient }
         flash[:success] = "Welcome to the Inno Med App!"
         redirect_to @patient
       else
@@ -76,6 +77,7 @@ class PatientsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
@@ -84,8 +86,7 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-     # params.require(:patient).permit(:photo, :first_name, :last_name, :age, :phoneNo, :email, :gender, :address, :insurance)
-     params.require(:patient).permit(:first_name, :email, :gender, :password,
-                                   :password_confirmation)
+      params.require(:patient).permit(:photo, :first_name, :last_name, :age, :phoneNo, :email, :gender, :address, :insurance, :password, :password_confirmation)
+     #params.require(:patient).permit(:first_name, :last_name, :email, :gender)
     end
 end
