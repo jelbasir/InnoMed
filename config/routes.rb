@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :appointments
   resources :schedules
-  resources :remote_consultation
+  resources :remoteconsultations
 
 
   get 'password_resets/new'

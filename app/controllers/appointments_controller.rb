@@ -26,11 +26,17 @@ class AppointmentsController < ApplicationController
        #redirect_to patient_appointments_payment_path
 
 
-       redirect_to patient_appointments_path
+       render :payment
     else
       render :new
     end
   end
+
+  def payment
+
+      redirect_to patient_appointments_path
+
+  end 
 
    private
     def set_appointment
