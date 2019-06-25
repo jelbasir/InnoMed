@@ -8,7 +8,7 @@
 
          <li><%= link_to "Home",    root_path %></li>
          <li><%= link_to "Doctors",    doctors_path %></li>
-
+         <li><%= link_to "Chat",    conversations_path %></li>
          <% if logged_in? %>
             <li><%= link_to "Appointments", patient_appointments_path(current_patient.id) %></li>
 
