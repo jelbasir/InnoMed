@@ -14,4 +14,24 @@
  *= require_self
  */
 
+ .chat {
+    border: 1px solid #CCC;
 
+    height: 50vh;
+    border-radius: 5px 5px 0 0;
+    overflow-y: auto;
+  }
+  
+  .chat-input {
+    border-top: 0 none;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .room-nav-link {
+    border: 1px solid  #CCC;
+
+  
+    & + .room-nav-link {
+      border-top: 0 none;
+    }
+  }

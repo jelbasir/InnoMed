@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
   resources :appointments
   resources :schedules
   resources :remoteconsultations
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :patients, :doctors do
    resources :appointments, only: [:index,:new, :create, :destroy, :payment]
+   resources :room_messages
+   resources :rooms
   end
   resources :doctors do
    resources :schedules
@@ -38,7 +42,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :patients
- 
+  resources :room_messages
+  resources :rooms
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :conversations do
     resources :messages

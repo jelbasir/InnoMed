@@ -43,7 +43,7 @@ gem 'better_errors', '~> 2.5.1'
 gem 'bulma-rails', '~> 0.7.5'
 
 #Simple Form
-gem 'simple_form', '~> 4.1'
+gem 'simple_form'
 
 # enable the REPL and local/instance variable inspection
 gem 'binding_of_caller', '~> 0.8.0'
@@ -79,3 +79,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'stripe' 
 gem 'semantic-ui-sass'
+
+gem 'devise'
