@@ -18,6 +18,9 @@
          <div class="speciality">
           <%= doctor.speciality%>
         </div>
+       <div class="hourlycharge">
+         <strong>Hourly Charge : <%= number_to_currency(doctor.hourlycharge, :unit => "€") %></strong>
+        </div>
         </td>
         <td>
          <div class="bio">

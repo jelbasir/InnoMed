@@ -13,17 +13,88 @@
   <% end %>
   
   
-  <%= f.label :doctor %>
-  <%= f.select :doctor_id, @doctors.collect { |d| [d.full_name, d.id]} %>
-  <br />
-  <%= f.label :date %>
-  <%= f.date_field :appointmentdate %>
-  <br />
-  <%= f.label :time %>
-  <%= f.time_field :appointmenttime %>
+  <%= f.label :Doctor %>
+  <%= f.select:doctor_id, @doctors.collect { |d| [d.full_name, d.id]}, {:prompt => "--Select Doctor--"},{:onchange=>"setDoctor(this.value);"} %>
+
+  <br/>
+  <%= f.label :Date %>
+  <%= f.date_field :appointmentdate,min: 0.days.ago, max: 1.year.from_now,value: Date.today.strftime("%d-%m-%Y")  %>
+  <br/>
+  <%= f.label :Time %>
+  <%= f.time_field :appointmenttime,
+      value: "%H:%M",
+      min: '09:00:00',
+      max: '17:00:00' %>
+  
+  <br/>
+  <%= f.label :Hours %>
+  <%= f.select :totalhours, options_for_select(1..5),{:prompt => "--Select Hours--"}, {:onchange=>"setAmount(this.value);"} %>
+
+ <br/>
+ <strong>Hourly Rate :<label id="labelHR" style="width:100px;display:inline-block;">0.00</label></strong>
+ <br/>
+ <strong>Total Amount :<label id="labelAmount" style="width:100px;display:inline-block;">0.00</label></strong>
+  
+ <br />
+ <br />
+
+  
+   <script>
+  
+var docID = 0; 
+var hours = 0;
+var totalamt = 0;
 
 
-  <br />
-  <br />
+function showHolidaysDisableWeekends(date) {
+			var thisDay = date.getDay();
+			var returnedArr = [true, '']; // Normal day
+
+			if (thisDay == 0 || thisDay == 6) { 
+					returnedArr = [false, '', 'Cannot choose a weekend day']; // Weekend day
+				}
+		
+			return returnedArr;
+}   
+ 
+function setDoctor(x) {
+  if (x == "") {
+   alert("Please Select a Valid doctor");
+   return;
+  }  
+  docID = x;
+}
+
+function setAmount(x) {
+  if (x == "") {
+   alert("Please Select Number of hours");
+   return;
+  }  
+ totalamt = 0;
+ hours = x;
+ GetAmt();
+}  
+
+function GetAmt() {
+ 
+   $.ajax({
+               url: "/doctors/" + docID, // Route to the Script Controller method
+               type: "GET",
+               dataType: "json",
+               success: function(result) {
+                // Do something with the response here
+               totalamt = (result.hourlycharge * hours);
+               document.all('labelHR').innerHTML = parseFloat(result.hourlycharge).toFixed(2);
+               document.all('labelAmount').innerHTML = parseFloat(totalamt).toFixed(2);
+             
+                      },
+               error: function() {
+                        alert("Ajax error!")
+                      }
+    });
+}
+
+</script>
+  
  <%= f.submit "Create Appointment", class: "btn btn-primary" %>
 <% end %>

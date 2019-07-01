@@ -1,5 +1,6 @@
 class RemoteconsultationsController < ApplicationController
-	
+  
+
 	def index
 		@remoteconsultation = Remoteconsultation.all.order("created_at DESC")
 
@@ -23,7 +24,7 @@ class RemoteconsultationsController < ApplicationController
 
 
     def show
-        @remoteconsultation = Remoteconsultation.find(params[:id])
+        @remoteconsultation = Remoteconsultation.new(params[:id])
     end
 
     def update
@@ -49,9 +50,12 @@ class RemoteconsultationsController < ApplicationController
     end
 
 
-	private 
+#	private 
 
 	def remoteconsultation_params
-		params.require(:remoteconsultation).permit(:title, :content)
+		params(:remoteconsultation).permit(:title, :content)
 	end
 end
+
+
+

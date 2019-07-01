@@ -2,10 +2,10 @@
 
 one:
   message: MyText
+  user: one
   patient: one
-  doctor: one
 
 two:
   message: MyText
+  user: two
   patient: two
-  doctor: two

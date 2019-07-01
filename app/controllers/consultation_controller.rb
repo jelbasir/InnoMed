@@ -1,5 +1,6 @@
 class ConsultationController < ApplicationController
 
+
 	def create
         @remoteconsultation = Remoteconsultation.find(params[:remoteconsultation_id])
          @consultation = @remoteconsultations.comments.create(params[:consultation].permit(:name, :consultation))
@@ -14,3 +15,5 @@ class ConsultationController < ApplicationController
     end
 
 end
+
+

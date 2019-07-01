@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190623173451) do
+ActiveRecord::Schema.define(version: 20190630220133) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointmentdate"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190623173451) do
     t.integer "doctor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "totalhours"
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
@@ -44,25 +45,7 @@ ActiveRecord::Schema.define(version: 20190623173451) do
     t.string "gp_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "microposts", force: :cascade do |t|
-    t.text "content"
-    t.integer "patient_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id", "created_at"], name: "index_microposts_on_patient_id_and_created_at"
-    t.index ["patient_id"], name: "index_microposts_on_patient_id"
-  end
-
-  create_table "notes", force: :cascade do |t|
-    t.text "message"
-    t.integer "patient_id"
-    t.integer "doctor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["doctor_id"], name: "index_notes_on_doctor_id"
-    t.index ["patient_id"], name: "index_notes_on_patient_id"
+    t.decimal "hourlycharge", precision: 5, scale: 2
   end
 
   create_table "patients", force: :cascade do |t|

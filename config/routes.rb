@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :appointments
   resources :schedules
   resources :remoteconsultations
+  resources :consultations
 
 
   get 'password_resets/new'
@@ -38,7 +39,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :patients
- 
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

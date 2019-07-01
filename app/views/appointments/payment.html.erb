@@ -38,5 +38,7 @@
 
   <br />
   <br />
- <%= f.submit "Make the Payment", class: "btn btn-primary" %>
+
+<%= link_to "Make the Payment", patient_appointments_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+
 <% end %>
