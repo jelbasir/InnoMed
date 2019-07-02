@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190630220133) do
+ActiveRecord::Schema.define(version: 20190702212027) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointmentdate"
@@ -63,6 +63,17 @@ ActiveRecord::Schema.define(version: 20190630220133) do
     t.string "password_digest"
     t.date "dob"
     t.index ["email"], name: "index_patients_on_email", unique: true
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.integer "patient_id"
+    t.integer "doctor_id"
+    t.text "prescription"
+    t.decimal "prescription_cost", precision: 7, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_prescriptions_on_doctor_id"
+    t.index ["patient_id"], name: "index_prescriptions_on_patient_id"
   end
 
   create_table "remoteconsultations", force: :cascade do |t|

@@ -12,6 +12,7 @@ has_secure_password
   
 has_many :appointments, dependent: :destroy
 has_many :doctors, through: :appointments
+has_many :prescriptions, through: :doctors
 
 
 
