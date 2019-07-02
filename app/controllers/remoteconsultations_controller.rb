@@ -24,7 +24,8 @@ class RemoteconsultationsController < ApplicationController
 
 
     def show
-        @remoteconsultation = Remoteconsultation.new(params[:id])
+        #@remoteconsultation = Remoteconsultation.new(params[:id])
+         @remoteconsultation = Remoteconsultation.find(params[:id])
     end
 
     def update
@@ -49,11 +50,11 @@ class RemoteconsultationsController < ApplicationController
         redirect_to remoteconsultation_path
     end
 
-
-#	private 
+	private 
 
 	def remoteconsultation_params
-		params(:remoteconsultation).permit(:title, :content)
+		#params(:remoteconsultation).permit(:title, :content)
+		params.require(:remoteconsultation).permit(:title, :content)
 	end
 end
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :appointments
   resources :schedules
   resources :remoteconsultations
-  resources :consultations
+  resources :consultations,only: [:index,:new, :create, :destroy]
 
 
   get 'password_resets/new'
