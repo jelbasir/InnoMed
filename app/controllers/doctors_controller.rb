@@ -1,28 +1,20 @@
-class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show, :edit, :update, :destroy]
+# frozen_string_literal: true
 
-  # GET /doctors
-  # GET /doctors.json
+class DoctorsController < ApplicationController
+  before_action :set_doctor, only: %i[show edit update destroy]
+
   def index
     @doctors = Doctor.all
   end
 
-  # GET /doctors/1
-  # GET /doctors/1.json
-  def show
-  end
+  def show; end
 
-  # GET /doctors/new
   def new
     @doctor = Doctor.new
   end
 
-  # GET /doctors/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /doctors
-  # POST /doctors.json
   def create
     @doctor = Doctor.new(doctor_params)
 
@@ -37,8 +29,6 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /doctors/1
-  # PATCH/PUT /doctors/1.json
   def update
     respond_to do |format|
       if @doctor.update(doctor_params)
@@ -51,8 +41,6 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # DELETE /doctors/1
-  # DELETE /doctors/1.json
   def destroy
     @doctor.destroy
     respond_to do |format|
@@ -62,13 +50,12 @@ class DoctorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_doctor
-      @doctor = Doctor.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def doctor_params
-      params.require(:doctor).permit(:first_name, :middle_name, :last_name, :image_url, :speciality, :bio, :address, :email, :phone_no, :gp_number)
-    end
+  def set_doctor
+    @doctor = Doctor.find(params[:id])
+  end
+
+  def doctor_params
+    params.require(:doctor).permit(:first_name, :middle_name, :last_name, :image_url, :speciality, :bio, :address, :email, :phone_no, :gp_number)
+  end
 end

@@ -1,57 +1,54 @@
+# frozen_string_literal: true
+
 class RemoteconsultationsController < ApplicationController
-	
-	def index
-		@remoteconsultation = Remoteconsultation.all.order("created_at DESC")
+  def index
+    @remoteconsultation = Remoteconsultation.all.order('created_at DESC')
+  end
 
-	end
+  def new
+    @remoteconsultation = Remoteconsultation.new
+  end
 
-	def new 
-		@remoteconsultation = Remoteconsultation.new 
-	end
+  def create
+    @remoteconsultation = Remoteconsultation.new(remoteconsultation_params)
 
-	def create 
-		@remoteconsultation = Remoteconsultation.new(remoteconsultation_params)
+    if @remoteconsultation.save
 
-		if @remoteconsultation.save
+      redirect_to @remoteconsultation
 
-			redirect_to @remoteconsultation
+    else
+      render 'new'
+      end
+  end
 
-		else
-			render 'new'
-    	end
-	end 
+  def show
+    @remoteconsultation = Remoteconsultation.find(params[:id])
+  end
 
+  def update
+    @remoteconsultation = Remoteconsultation.find(params[:id])
 
-    def show
-        @remoteconsultation = Remoteconsultation.find(params[:id])
+    if @remoteconsultation.update(remoteconsultation_params)
+      redirect_to @remoteconsultation
+    else
+      render 'edit'
     end
+  end
 
-    def update
-        @remoteconsultation = Remoteconsultation.find(params[:id])
+  def edit
+    @remoteconsultation = Remoteconsultation.find(params[:id])
+  end
 
-        if @remoteconsultation.update(remoteconsultation_params)
-            redirect_to @remoteconsultation
-        else
-            render 'edit'
-        end
-    end
+  def destroy
+    @remoteconsultation = Remoteconsultation.find(params[:id])
+    @remoteconsultations.destroy
 
+    redirect_to remoteconsultation_path
+  end
 
-    def edit
-        @remoteconsultation = Remoteconsultation.find(params[:id])
-    end
+  private
 
-    def destroy
-        @remoteconsultation = Remoteconsultation.find(params[:id])
-        @remoteconsultations.destroy
-
-        redirect_to remoteconsultation_path
-    end
-
-
-	private 
-
-	def remoteconsultation_params
-		params.require(:remoteconsultation).permit(:title, :content)
-	end
+  def remoteconsultation_params
+    params.require(:remoteconsultation).permit(:title, :content)
+  end
 end

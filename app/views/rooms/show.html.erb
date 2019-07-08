@@ -1,69 +1,61 @@
-<h1>
-  <%= @room.name %>
-</h1>
-
 <div class="row">
   <div class="col-12 col-md-3">
-    <%= render partial: 'rooms' %>
   </div>
 
-  <div class="col">
-    <div class="chat">
+</div>
 
-    <% if @room_messages.present? %>
+<div class="container">
+  <div class="row">
 
-      <% @room_messages.each do |room_message| %>
-        <div class="chat-message-container">
-          <div class="row no-gutters">
-            <div class="col-auto text-center">
-              <img src="<%= gravatar_url(room_message.user) %>" class="avatar" alt="">
-            </div>
+    <div class="col-sm-4">
+      <%= render partial: 'rooms' %>
+    </div>
 
-            <div class="col">
-              <div class="message-content">
-                <p class="mb-1">
-                  <%= room_message.message %>
-                </p>
+    <div class="col-sm-8 chat">
+      <div class="chatbody">
+        <table class="table">
+          <tbody data-channel-subscribe="room" data-room-id="<%= @room.id %>">
 
-                <div class="text-right">
-                  <small>
-                    <%= room_message.created_at %>
-                  </small>
-                </div>
-              </div>
-            </div>
+            <% @room_messages.each do |message| %>
+              <tr>
+                <td colspan="1">
+                  <%= image_tag message.from.try(:image_url) || '/images/no-image-icon-hi.png', class: :avatar %>
+                </td>
+                <td><%= message.message %></td>
+                <td><%= message.created_at.strftime("%l:%M") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <%= form_with url: room_messages_path, scope: :room_message, id: :new_message do |form|%>
+        <%= form.hidden_field :room_id, value: @room.id, remote: true %>
+        <div class="row">
+          <div class="col-xs-9">
+            <%= form.text_field :message, placeholder: "Type message", class: "form-control" %>
+          </div>
+          <div class="col-xs-3">
+            <%= form.submit :Send, class: "btn btn-info btn-block" %>
           </div>
         </div>
       <% end %>
-
-      <% end %>
-
     </div>
-
-
-    <% if @room_message.present? %>
-    <%= simple_form_for @room_message, remote: true do |form| %>
-      <div class="input-group mb-3">
-        <%= form.input :message, as: :string,
-                                 wrapper: false,
-                                 label: false,
-                                 input_html: {
-                                   class: 'chat-input'
-                                 } %>
-        <div class="input-group-append">
-          <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
-        </div>
-      </div>
-
-      <%= form.input :room_id, as: :hidden %>
-    <% end %>
-
-    <% end %>
-    
-
-
-    
-    
-
   </div>
 </div>
+
+<table class="d-none" data-role="message-template">
+  <tbody>
+    <div >
+      <div class="chat-message-container">
+        <tr>
+          <td>
+            <img class="avatar" src="/images/no-image-icon-hi.png" alt="No avatar" data-role="user-avatar">
+          </td>
+          <td data-role="message-text"></td>
+          <td data-role="message-date"></td>
+        </tr>
+      </div>
+    </div>
+  </tbody>
+</table>

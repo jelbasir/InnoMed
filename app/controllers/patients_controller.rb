@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: %i[show edit update destroy]
 
   # GET /patients
   # GET /patients.json
@@ -10,8 +12,7 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-       @patient  = Patient.find(params[:id])
-
+    @patient = Patient.find(params[:id])
   end
 
   # GET /patients/new
@@ -20,35 +21,33 @@ class PatientsController < ApplicationController
   end
 
   # GET /patients/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /patients
   # POST /patients.json
   def create
-   # @patient = Patient.new(patient_params)
+    # @patient = Patient.new(patient_params)
 
-    #respond_to do |format|
-    #if @patient.save
-     #   format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
-      # format.json { render :show, status: :created, location: @patient }
-    #else
-     #  format.html { render :new }
-      #format.json { render json: @patient.errors, status: :unprocessable_entity }
-    #end
-  #end
-    
-   @patient = Patient.new(patient_params)    # Not the final implementation!
-   if @patient.save
-    log_in @patient
-    flash[:success] = "Welcome to the Inno Med App!"
-    redirect_to @patient
-   else
-     format.html { render :new }
-     format.json { render json: @patient.errors, status: :unprocessable_entity }
-     # render 'new'
-   end
-    
+    # respond_to do |format|
+    # if @patient.save
+    #   format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+    # format.json { render :show, status: :created, location: @patient }
+    # else
+    #  format.html { render :new }
+    # format.json { render json: @patient.errors, status: :unprocessable_entity }
+    # end
+    # end
+
+    @patient = Patient.new(patient_params) # Not the final implementation!
+    if @patient.save
+      log_in @patient
+      flash[:success] = 'Welcome to the Inno Med App!'
+      redirect_to @patient
+    else
+      format.html { render :new }
+      format.json { render json: @patient.errors, status: :unprocessable_entity }
+      # render 'new'
+    end
   end
 
   # PATCH/PUT /patients/1
@@ -58,7 +57,7 @@ class PatientsController < ApplicationController
       if @patient.update(patient_params)
         format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
         format.json { render :show, status: :ok, location: @patient }
-        flash[:success] = "Welcome to the Inno Med App!"
+        flash[:success] = 'Welcome to the Inno Med App!'
         redirect_to @patient
       else
         format.html { render :edit }
@@ -77,16 +76,16 @@ class PatientsController < ApplicationController
     end
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patient
-      @patient = Patient.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def patient_params
-      params.require(:patient).permit(:photo, :first_name, :last_name, :age, :phoneNo, :email, :gender, :address, :insurance, :password, :password_confirmation)
-     #params.require(:patient).permit(:first_name, :last_name, :email, :gender)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_patient
+    @patient = Patient.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def patient_params
+    params.require(:patient).permit(:photo, :first_name, :last_name, :age, :phoneNo, :email, :gender, :address, :insurance, :password, :password_confirmation)
+    # params.require(:patient).permit(:first_name, :last_name, :email, :gender)
+  end
 end

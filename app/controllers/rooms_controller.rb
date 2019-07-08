@@ -1,57 +1,24 @@
+# frozen_string_literal: true
+
 class RoomsController < ApplicationController
-    before_action :load_entities
+  def index
+    @users = current_doctor ? Patient.all : Doctor.all
+  end
 
+  def show
+    @users = current_doctor ? Patient.all : Doctor.all
 
-    def index
-        @rooms = Room.all
-        @somedata = 'test data send'
-       
-    end 
+    @doctor = current_doctor || Doctor.find(params[:doctor_id])
+    @patient = current_patient || Patient.find(params[:patient_id])
+    @room = Room.find_or_create_by(
+      doctor: @doctor,
+      patient: @patient
+    )
+    @room_messages = @room.room_messages
+  end
 
-    def new
-        @room = Room.new
-      end
-    
-    def create
-        @room = Room.new permitted_parameters
-    
-        if @room.save
-          flash[:success] = "Room #{@room.name} was created successfully"
-          redirect_to rooms_path
-        else
-          render :new
-        end
-    end
-    
-      def edit
-      end
-    
-      def update
-        if @room.update_attributes(permitted_parameters)
-          flash[:success] = "Room #{@room.name} was updated successfully"
-          redirect_to rooms_path
-        else
-          render :new
-        end
-      end
-    
-      protected
-    
-      def load_entities
-        @rooms = Room.all
-        @room = Room.find(params[:id]) if params[:id]
+  private
+  def room_params
 
-        @patients = Patient.all
-       #@patient  = Patient.find(params[:id])
-      end
-    
-      def permitted_parameters
-        params.require(:room).permit(:name)
-      end
-
-      def show
-        @room_message = RoomMessage.new room: @room
-        @room_messages = @room.room_messages
-      end
-
+  end
 end

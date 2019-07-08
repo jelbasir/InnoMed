@@ -1,24 +1,52 @@
-# README
+# Dependencies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 2.6.3
+- Rails  5.1.x
+- SQLite
+- Redis
 
-Things you may want to cover:
+# Overview
 
-* Ruby version
+For now it's demo for chat between Patients and Doctors. Consider that it uses scoped loging for them.
+It uses [ActionCable](https://guides.rubyonrails.org/action_cable_overview.html) for message deliverying, review:
+- app/assets/javascript/channels/*
+- app/assets/channels/*
 
-* System dependencies
+# Deployment
 
-* Configuration
+There is no deployment setup for now. Just go to the server.
 
-* Database creation
+## Staging
 
-* Database initialization
+http://18.202.252.238
 
-* How to run the test suite
+## Initial server configuration
 
-* Services (job queues, cache servers, search engines, etc.)
+For EC2
+```
+git clone git@github.com:ameenmohamed/innomed.git
+# navigate to dir
+bundle
+# rails db:reset - it's dropping previous db use consciously
+rails db:migrate
+```
 
-* Deployment instructions
+Install Redis:
+```
+sudo yum-config-manager --enable epel
+sudo yum install redis
+sudo redis-server /etc/redis.conf
+```
 
-* ...
+# Development
+
+## Testing
+
+No test suite. Use rspec for develop one.
+
+## TODOs:
+
+- Use AnyCable
+- Utilize rails credentials for saving Stripe credentials
+- Setup Deployment pipeline
+- Update to bootstrap 4

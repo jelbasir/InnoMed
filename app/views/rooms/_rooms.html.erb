@@ -1,17 +1,16 @@
-<div class="mb-3">
-  <%= link_to new_room_path, class: 'btn btn-primary' do %>
-    Create a room
-  <% end %>
-</div>
-
-<% if @rooms.present? %>
-  <nav class="nav flex-column">
-    <% @rooms.each do |room| %>
-      <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %> </p>
+<ul class="list-group">
+  <% @users.each do |user| %>
+    <% chat_path = current_doctor ? doctor_room_path(patient_id: user.id) : room_path(doctor_id: user.id) %>
+    <%= link_to chat_path, class: 'chatperson' do %>
+      <span class="chatimg">
+        <img src="http://via.placeholder.com/50x50?text=A" alt="" />
+      </span>
+      <div class="namechat">
+        <div class="pname"><%= user.full_name %></div>
+        <% if user.is_a?(Doctor) %>
+          <div class="lastmsg"><%= user.speciality %></div>
+        <% end %>
+      </div>
     <% end %>
-  </nav>
-<% else %>
-  <div class="text-muted">
-    The are no rooms
-  </div>
-<% end %>
+  <% end %>
+</ul>

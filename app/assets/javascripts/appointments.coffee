@@ -2,11 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery -> 
+jQuery ->
   Stripe.setPublishiableKey($('meta[name="stripe-key"]').attr('content'))
   patient.setupForm()
 
-patient = 
+patient =
   setupForm: ->
     $('#new_patient').submit ->
       $('input[type=submit]').attr('disabled',true)
@@ -18,7 +18,7 @@ patient =
       number: $('#card_number').val()
       cvc: $('#card_code').val()
       expMonth: $('#card_month').val()
-      expyear: $('#card_year').val() 
+      expyear: $('#card_year').val()
     Stripe.createToken(card, patient.handleStripeResponse)
 
   handleStripeResponse: ->
@@ -26,7 +26,7 @@ patient =
       $('#patient_stripe_card_token').val(response.id)
       alert(response.id)
       $('#new_patient')[0].submit()
-    else 
+    else
       alert(response.error.message)
       $('#stripe_error').text(response.error.message)
       $('input[type=submit]').attr('disabled',false)

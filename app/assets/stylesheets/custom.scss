@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -9,13 +6,13 @@ $gray-medium-light: #eaeaea;
     background-color: #39d;
  }
 
-.myNavbar li a { 
-color: black; 
-} 
+.myNavbar li a {
+color: black;
+}
 
-.myNavbar li a:hover, focus, active { 
-color: #39d; 
-background-color: 39d; 
+.myNavbar li a:hover, focus, active {
+color: #39d;
+background-color: 39d;
 }
 
 /* universal */

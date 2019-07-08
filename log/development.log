@@ -35369,3 +35369,119 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 214ms (Views: 203.5ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for ::1 at 2019-07-01 20:06:39 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3990.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 4709ms (Views: 4664.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms" for ::1 at 2019-07-01 20:07:23 +0100
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_rooms.html.erb (35.6ms)
+  Rendered rooms/index.html.erb within layouts/application (75.7ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 886ms (Views: 675.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-07-01 20:07:42 +0100
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 579ms (Views: 563.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rooms" for ::1 at 2019-07-01 20:07:54 +0100
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_rooms.html.erb (5.2ms)
+  Rendered rooms/index.html.erb within layouts/application (33.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 629ms (Views: 610.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/new" for ::1 at 2019-07-01 20:08:29 +0100
+Processing by RoomsController#new as HTML
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (1092.6ms)
+  Rendered rooms/new.html.erb within layouts/application (1133.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 1770ms (Views: 1738.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms" for ::1 at 2019-07-01 20:08:38 +0100
+Processing by RoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FSyMers3+HQMpfSA82qGLvvawouIQUjvdGYu1ZOVN34bJqLAbf96psMo8yk8IEKMmzVNsIkhXslepLEijkm9cw==", "room"=>{"name"=>"EyesightIssues"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "EyesightIssues"], ["created_at", "2019-07-01 19:08:38.288128"], ["updated_at", "2019-07-01 19:08:38.288128"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.9ms)
+
+
+
+SQLite3::ConstraintException - UNIQUE constraint failed: rooms.name:
+  app/controllers/rooms_controller.rb:18:in `create'
+
+Started POST "/__better_errors/452b3167b8deeef4/variables" for ::1 at 2019-07-01 20:08:38 +0100
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/rooms" for ::1 at 2019-07-01 20:10:39 +0100
+Processing by RoomsController#index as HTML
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  Rendered rooms/_rooms.html.erb (5.4ms)
+  Rendered rooms/index.html.erb within layouts/application (32.8ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 500ms (Views: 479.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rooms/new" for ::1 at 2019-07-01 20:10:42 +0100
+Processing by RoomsController#new as HTML
+  Rendering rooms/new.html.erb within layouts/application
+  Rendered rooms/_form.html.erb (11.3ms)
+  Rendered rooms/new.html.erb within layouts/application (38.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 633ms (Views: 616.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/rooms" for ::1 at 2019-07-01 20:10:49 +0100
+Processing by RoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m4NqYtHbSrnTBQF1b2dovuE3bdIpVPp+MUD5AjCzFSOViUTYBxPIaxyIBtygLawcgdji6Sg07Fgbgmb1LW+fLg==", "room"=>{"name"=>"EyesightIssues"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "EyesightIssues"], ["created_at", "2019-07-01 19:10:49.353699"], ["updated_at", "2019-07-01 19:10:49.353699"]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.6ms)
+
+
+
+SQLite3::ConstraintException - UNIQUE constraint failed: rooms.name:
+  app/controllers/rooms_controller.rb:18:in `create'
+
+Started POST "/__better_errors/1d0decfc5a4dd9ea/variables" for ::1 at 2019-07-01 20:10:49 +0100
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT  "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]

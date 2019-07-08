@@ -1,24 +1,23 @@
+# frozen_string_literal: true
+
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:edit, :update, :destroy]
-   before_action :set_doctor
-   
+  before_action :set_schedule, only: %i[edit update destroy]
+  before_action :set_doctor
 
   # GET /schedules
   # GET /schedules.json
   def index
-    #@schedules = Schedule.all
-     if !params[:doctor_id].blank? 
-    
-    @schedules = @doctor.schedules
-     else
-     @schedules = Schedule.all
-     end
+    # @schedules = Schedule.all
+    @schedules = if params[:doctor_id].present?
+                   @doctor.schedules
+                 else
+                   Schedule.all
+                 end
   end
 
   # GET /schedules/1
   # GET /schedules/1.json
-  def show
-  end
+  def show; end
 
   # GET /schedules/new
   def new
@@ -26,8 +25,7 @@ class SchedulesController < ApplicationController
   end
 
   # GET /schedules/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /schedules
   # POST /schedules.json
@@ -70,19 +68,18 @@ class SchedulesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_schedule
-      @schedule = Schedule.find(params[:id])
-    end
-    
-    def set_doctor
-      if !params[:doctor_id].blank? 
-      @doctor = Doctor.find(params[:doctor_id])
-      end
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def schedule_params
-      params.require(:schedule).permit(:title, :start, :end, :doctor_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def set_doctor
+    @doctor = Doctor.find(params[:doctor_id]) if params[:doctor_id].present?
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def schedule_params
+    params.require(:schedule).permit(:title, :start, :end, :doctor_id)
+  end
 end
