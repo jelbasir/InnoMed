@@ -16,15 +16,13 @@ It uses [ActionCable](https://guides.rubyonrails.org/action_cable_overview.html)
 
 There is no deployment setup for now. Just go to the server.
 
-## Staging
 
-http://18.202.252.238
 
 ## Initial server configuration
 
 For EC2
 ```
-git clone git@github.com:ameenmohamed/innomed.git
+git clone  https://github.com/jelbasir/InnoMed.git
 # navigate to dir
 bundle
 # rails db:reset - it's dropping previous db use consciously
@@ -37,6 +35,11 @@ sudo yum-config-manager --enable epel
 sudo yum install redis
 sudo redis-server /etc/redis.conf
 ```
+for windows 
+Download and install redis as a service 
+https://github.com/microsoftarchive/redis/releases
+https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.msi
+
 
 # Development
 
