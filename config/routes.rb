@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :users
   resources :prescriptions
   resources :appointments
   resources :schedules
@@ -32,7 +34,8 @@ Rails.application.routes.draw do
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
   get   '/doctors', to: 'static_pages#doctors'
-  
+  get  '/signup/doctors',  to: 'doctors#new'
+  post '/signup/doctors',  to: 'doctors#create'
   get  '/signup',  to: 'patients#new'
   post '/signup',  to: 'patients#create'
   get    '/login',   to: 'sessions#new'

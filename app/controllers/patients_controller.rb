@@ -17,6 +17,7 @@ class PatientsController < ApplicationController
   # GET /patients/new
   def new
     @patient = Patient.new
+    
   end
 
   # GET /patients/1/edit
@@ -37,8 +38,18 @@ class PatientsController < ApplicationController
       #format.json { render json: @patient.errors, status: :unprocessable_entity }
     #end
   #end
-    
-   @patient = Patient.new(patient_params)    # Not the final implementation!
+  
+  user_params = {
+    email: patient_params["email"],
+    password: patient_params["password"],
+    user_type: "patient"
+  }
+  
+   user = User.new(user_params) 
+   user.save!
+   new_params = patient_params
+   new_params["user_id"] = user.id
+   @patient = Patient.new(new_params)    # Not the final implementation!
    if @patient.save
     log_in @patient
     flash[:success] = "Welcome to the Inno Med App!"

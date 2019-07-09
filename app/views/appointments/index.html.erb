@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
   <% if logged_in? %>
-    <%= link_to "Book Appointment",new_patient_appointment_path(current_patient.id), class: "btn btn-lg btn-primary" %>
-    <%= link_to "Create New Remote Consultation", new_remoteconsultation_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+    <% if current_user.user_type == "patient" %>
+      <%= link_to "Book Appointment",new_patient_appointment_path(@current_patient), class: "btn btn-lg btn-primary" %>
+      <%= link_to "Create New Remote Consultation", new_remoteconsultation_path(@current_patient), class: "btn btn-lg btn-primary" %>
+    <% end %>
   <% end %>
 
 <h1>Appointments</h1>

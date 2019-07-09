@@ -60,7 +60,17 @@
     <%= form.label :gp_number %>
     <%= form.text_field :gp_number, id: :doctor_gp_number %>
   </div>
-
+  
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :doctor_password %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :hourlycharge %>
+    <%= form.number_field :hourlycharge, id: :doctor_hourlycharge %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>

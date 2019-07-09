@@ -1,19 +1,33 @@
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:edit, :update, :destroy]
   before_action :set_patient
-  before_action :set_doctors , only: [:new, :create]
+  before_action :set_doctors 
+  #, only: [:new, :create]
   
   def index
-    @appointments = @patient.appointments.order(:appointmentdate, :appointmenttime)
+    if current_user.user_type == "patient"
+    @appointments = Appointment.where(:patient_id => @patient).order(:appointmentdate, :appointmenttime)
+    else
+    @appointments = Appointment.where(:doctor_id => @doctor).order(:appointmentdate, :appointmenttime)
+     #@appointments = @doctor.appointments.order(:appointmentdate, :appointmenttime)
+    end
   end
-
+  
   def show
-    @doctor = @appointment.doctor.find(params[:id])
+    if current_user.user_type == "patient"
+    #@doctor = @appointment.doctor.find(params[:id])
     @patient = @appointment.params.find(params[:patient_id])
+    else
+    @doctor = @appointment.params.find(params[:doctor_id])
+    #@patient = @appointment.params.find(params[:id])
+  end
   end
 
   def new
     @appointment = @patient.appointments.new
+   #puts "_______________==========="
+    #puts @current_patient
+    #@appointment = Patient.find(@current_patient).appointments.new
   end
 
   def create
@@ -44,13 +58,21 @@ class AppointmentsController < ApplicationController
     end
     
     def set_doctors
+      if current_user.user_type == "patient"
       @doctors =  Doctor.all.order("last_name")
-    end 
+      else
+       @doctor = @current_doctor
+      end
+    end
     
     def set_patient
-      @patient = current_patient
+      if current_user.user_type == "patient"
+      @patient = @current_patient
+      else
+      @patients =  Patient.all.order("last_name")
+      end
     end
-
+    
     def appointment_params
       params.require(:appointment).permit(:doctor_id, :appointmentdate, :appointmenttime)
     end

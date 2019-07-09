@@ -2,7 +2,7 @@
 
 <table class="doctors">
      <% if logged_in? %>
-       <%= link_to "Book Appointment",new_patient_appointment_path(current_patient.id), class: "btn btn-lg btn-primary" %>
+       <%= link_to "Book Appointment",new_patient_appointment_path(@current_patient), class: "btn btn-lg btn-primary" %>
      <% end %>
     <% @doctors.each do |doctor| %>
       <tr>

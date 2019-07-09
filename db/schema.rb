@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190702212027) do
+ActiveRecord::Schema.define(version: 20190704224915) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "appointmentdate"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20190702212027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "hourlycharge", precision: 5, scale: 2
+    t.integer "user_id"
+    t.string "password_digest"
+    t.index ["user_id"], name: "index_doctors_on_user_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -62,7 +65,9 @@ ActiveRecord::Schema.define(version: 20190702212027) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.date "dob"
+    t.integer "user_id"
     t.index ["email"], name: "index_patients_on_email", unique: true
+    t.index ["user_id"], name: "index_patients_on_user_id"
   end
 
   create_table "prescriptions", force: :cascade do |t|
@@ -91,6 +96,15 @@ ActiveRecord::Schema.define(version: 20190702212027) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_schedules_on_doctor_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_type"
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end

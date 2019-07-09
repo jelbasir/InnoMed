@@ -10,6 +10,7 @@ class DoctorsController < ApplicationController
   # GET /doctors/1
   # GET /doctors/1.json
   def show
+    @doctor  = Doctor.find(params[:id])
   end
 
   # GET /doctors/new
@@ -24,17 +25,27 @@ class DoctorsController < ApplicationController
   # POST /doctors
   # POST /doctors.json
   def create
-    @doctor = Doctor.new(doctor_params)
-
-    respond_to do |format|
-      if @doctor.save
-        format.html { redirect_to @doctor, notice: 'Doctor was successfully created.' }
-        format.json { render :show, status: :created, location: @doctor }
-      else
-        format.html { render :new }
-        format.json { render json: @doctor.errors, status: :unprocessable_entity }
-      end
-    end
+    user_params = {
+    email: doctor_params["email"],
+    password: doctor_params["password"],
+    user_type: "doctor"
+  }
+  
+   user = User.new(user_params) 
+   user.save!
+   new_params = doctor_params
+   new_params["user_id"] = user.id
+   @doctor = Doctor.new(new_params)    # Not the final implementation!
+   if @doctor.save
+    log_in @doctor
+    flash[:success] = "Welcome to the Inno Med App!"
+    redirect_to @doctor
+   else
+     format.html { render :new }
+     format.json { render json: @doctor.errors, status: :unprocessable_entity }
+     # render 'new'
+   end
+    
   end
 
   # PATCH/PUT /doctors/1
@@ -44,6 +55,8 @@ class DoctorsController < ApplicationController
       if @doctor.update(doctor_params)
         format.html { redirect_to @doctor, notice: 'Doctor was successfully updated.' }
         format.json { render :show, status: :ok, location: @doctor }
+        flash[:success] = "Welcome to the Inno Med App!"
+        redirect_to @doctor
       else
         format.html { render :edit }
         format.json { render json: @doctor.errors, status: :unprocessable_entity }
@@ -69,6 +82,6 @@ class DoctorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def doctor_params
-      params.require(:doctor).permit(:first_name, :middle_name, :last_name, :image_url, :speciality, :bio, :address, :email, :phone_no, :gp_number)
+      params.require(:doctor).permit(:first_name, :middle_name, :last_name, :image_url, :speciality, :bio, :address, :email, :phone_no, :gp_number, :password, :hourlycharge,:password_confirmation)
     end
 end

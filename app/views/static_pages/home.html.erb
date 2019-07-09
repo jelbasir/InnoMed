@@ -8,8 +8,13 @@
   </h2>
   <p> Connecting Health...</p>
 
+  <% if not logged_in? %>
   <%= link_to "Our Doctors!", doctors_path, class: "btn btn-lg btn-primary" %>
-
+ <% else %>
+          <% if current_user.user_type == "patient" %>
+            <%= link_to "Our Doctors!", doctors_path, class: "btn btn-lg btn-primary" %>
+           <% end %>
+  <% end %>
 
 </div>
 
